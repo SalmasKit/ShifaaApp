@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:controller="controller.SignUpController" 
+           xmlns="http://javafx.com/javafx/23.0.1" 
+           xmlns:fx="http://javafx.com/fxml/1"
+           styleClass="root"
+           stylesheets="@../Css/login.css">
+
+    <!-- Background Image -->
+    <StackPane styleClass="background-image">
+        <children>
+            <Pane style="-fx-background-color: rgba(255, 255, 255, 0.1);" />
+        </children>
+    </StackPane>
+
+    <!-- Main Content Container -->
+    <VBox styleClass="main-container" alignment="CENTER">
+        <!-- Sign Up Form Box -->
+        <VBox styleClass="login-pane" maxHeight="500" alignment="CENTER">
+            <VBox styleClass="login-form" spacing="10">
+                <HBox styleClass="header-box">
+                    <ImageView styleClass="logo">
+                        <image>
+                            <Image url="@../images/doctor-consultation-removebg-preview%20(1).png" />
+                        </image>
+                    </ImageView>
+                    <Label fx:id="titleLabel" styleClass="welcome-text" />
+                </HBox>
+
+                <VBox styleClass="form-group">
+                    <Label fx:id="firstNameLabel" styleClass="form-label" />
+                    <TextField fx:id="firstNameField" styleClass="form-field" />
+                </VBox>
+
+                <VBox styleClass="form-group">
+                    <Label fx:id="lastNameLabel" styleClass="form-label" />
+                    <TextField fx:id="lastNameField" styleClass="form-field" />
+                </VBox>
+
+                <VBox styleClass="form-group">
+                    <Label fx:id="emailLabel" styleClass="form-label" />
+                    <TextField fx:id="emailField" styleClass="form-field" />
+                </VBox>
+
+                <VBox styleClass="form-group">
+                    <Label fx:id="passwordLabel" styleClass="form-label" />
+                    <HBox styleClass="password-container">
+                        <PasswordField fx:id="passwordField" styleClass="password-field" 
+                                     HBox.hgrow="ALWAYS" />
+                        <Button fx:id="togglePasswordButton" 
+                                onAction="#togglePasswordVisibility"
+                                style="-fx-background-color: transparent; -fx-cursor: hand;"
+                                styleClass="password-toggle-button"
+                                HBox.hgrow="NEVER">
+                            <graphic>
+                                <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                                    <Image url="@../images/view.png" />
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
+                </VBox>
+
+                <Button fx:id="signUpButton" onAction="#handleSignUp" 
+                        styleClass="login-button" />
+
+                <HBox styleClass="register-box">
+                    <Label fx:id="loginLabel" styleClass="register-label" />
+                    <Button fx:id="loginButton" onAction="#handlelogininSignUp" 
+                            styleClass="signup-button" />
+                </HBox>
+
+                <!-- Language Switch -->
+                <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 10 0 0 0;">
+                    <Button fx:id="langButton" onAction="#handleLanguageSwitch" 
+                            styleClass="language-button" text="Fr"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </VBox>
+</StackPane>

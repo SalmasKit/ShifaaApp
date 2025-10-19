@@ -1,0 +1,736 @@
+/* Dark Mode CSS for JavaFX application */
+/* Using WhatsApp dark gray background (#121212); accent colors set to white or dark red for charts */
+
+/* ===== Patients Form Dark Mode ===== */
+#formContainer {
+    -fx-background-color: #2b2b2b !important;
+}
+
+/* Form Inputs - Dark Mode */
+#formContainer .text-field,
+#formContainer .date-picker,
+#formContainer .choice-box,
+#formContainer .spinner {
+    -fx-background-color: #3d3d3d !important;
+    -fx-border-color: #555555 !important;
+    -fx-text-fill: #ffffff !important;
+}
+
+/* Focus State - Dark Mode */
+#formContainer .text-field:focused,
+#formContainer .date-picker:focused,
+#formContainer .choice-box:focused {
+    -fx-background-color: #4a4a4a !important;
+    -fx-border-color: #7BABE2 !important;
+    -fx-effect: dropshadow(three-pass-box, rgba(123, 171, 226, 0.5), 5, 0, 0, 1) !important;
+}
+
+/* Form Buttons Container - Dark Mode */
+#formContainer HBox {
+    -fx-background-color: #2b2b2b !important;
+}
+
+/* Form Labels - Dark Mode */
+#formContainer .label {
+    -fx-text-fill: #e0e0e0 !important;
+}
+
+/* Form Text - Dark Mode */
+#formContainer * {
+    -fx-text-fill: #ffffff !important;
+}
+
+/* Section title in dark mode */
+#formContainer .section {
+    -fx-text-fill: white !important;
+}
+
+/* Add Patient button in dark mode */
+#addPatientButton {
+    -fx-background-color: #7BABE2 !important;
+    -fx-text-fill: white !important;
+    -fx-font-weight: bold !important;
+    -fx-background-radius: 4 !important;
+}
+
+#addPatientButton:hover {
+    -fx-background-color: #6a9bd1 !important;
+}
+
+/* ===== End Patients Form Dark Mode ===== */
+
+/* All Labels transparent background */
+.label {
+  -fx-background-color: transparent !important;
+}
+
+/* Specifically HBox/VBox labels transparent */
+.hbox > .label,
+.vbox > .label {
+  -fx-background-color: transparent !important;
+}
+
+/* Section class transparent */
+.section {
+  -fx-background-color: transparent !important;
+  -fx-text-fill: #FFFFFF !important;
+}
+
+/* Content container in dark mode */
+.content-container {
+    -fx-background-color: #2A2A2A !important;
+}
+
+/* Beige content container in dark mode */
+.content-container > VBox {
+    -fx-background-color: #3A3A3A !important;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 5, 0, 0, 2) !important;
+}
+
+/* Set default text color for all elements in dark mode */
+* {
+    -fx-text-fill: #FFFFFF !important;
+}
+
+/* Ensure labels are visible */
+.label {
+    -fx-text-fill: #FFFFFF !important;
+}
+
+/* Style for text fields and areas */
+.text-field, .text-area, .combo-box {
+    -fx-text-fill: #000000 !important; /* Black text on light background */
+    -fx-prompt-text-fill: #666666 !important;
+}
+
+/* Table Styles */
+.table-view {
+    -fx-background-color: #3A3A3A !important;
+    -fx-table-cell-border-color: transparent;
+    -fx-padding: 0;
+}
+
+/* Table Header */
+.table-view .column-header,
+.table-view .column-header-background .filler {
+    -fx-background-color: #2A2A2A !important;
+}
+
+/* Table Header Text */
+.table-view .column-header .label {
+    -fx-text-fill: #FFFFFF !important;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 8px;
+}
+
+/* Table Rows */
+.table-row-cell {
+    -fx-background-color: #3A3A3A !important;
+    -fx-text-fill: #FFFFFF !important;
+    -fx-border-color: transparent;
+    -fx-table-cell-border-color: transparent;
+}
+
+/* Alternating row colors */
+.table-row-cell:odd {
+    -fx-background-color: #2A2A2A !important;
+}
+
+/* Selected row */
+.table-row-cell:selected {
+    -fx-background-color: #4A4A4A !important;
+}
+
+/* Table Cells */
+.table-cell {
+    -fx-text-fill: #FFFFFF !important;
+    -fx-border-color: transparent;
+    -fx-padding: 8px;
+}
+
+/* Patient List Title */
+#patientsListLabel {
+    -fx-text-fill: #FFFFFF !important;
+}
+
+/* Style for headers and titles */
+.section, .header, .title {
+    -fx-text-fill: white!important; /* Light blue for headers */
+}
+
+/* Treatments container styles */
+#treatmentsContainer {
+    -fx-background-color: #2A2A2A !important;
+    -fx-padding: 15px !important;
+}
+
+/* Treatment cards */
+.treatment-card {
+    -fx-background-color: #2A2A2A !important;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 10, 0, 0, 2);
+    -fx-padding: 15px;
+}
+
+/* Card content */
+.treatment-card .label {
+    -fx-text-fill: #FFFFFF !important;
+}
+
+/* Card titles */
+.treatment-card .title {
+    -fx-text-fill: #7BABE2 !important;
+    -fx-font-weight: bold;
+    -fx-font-size: 1.1em;
+}
+
+/* App name in navigation */
+#Shifaa {
+   -fx-fill: #7BABE2 !important;
+   -fx-text-fill: #7BABE2 !important;
+}
+
+/* Context Menu Styling */
+.context-menu {
+    -fx-background-color: #2D2D2D !important;
+    -fx-text-fill: white !important;
+}
+
+.context-menu .menu-item {
+    -fx-background-color: transparent !important;
+    -fx-text-fill: white !important;
+}
+
+.context-menu .menu-item:hover {
+    -fx-background-color: #3D3D3D !important;
+}
+
+.context-menu .menu-item:focused {
+    -fx-background-color: #4D4D4D !important;
+}
+
+.context-menu .label {
+    -fx-text-fill: white !important;
+}
+/* Root layout */
+#mainLayout {
+    -fx-background-color: #121212 !important;
+}
+
+/* Header */
+#headerBox {
+    -fx-background-color: #2A2A2A !important;
+}
+#headerBox Text {
+    -fx-fill: #E0E0E0;
+}
+#headerBox ImageView {
+    -fx-opacity: 0.8;
+}
+
+/* Search Field */
+#searchField {
+    -fx-background-color: #2A2A2A;
+    -fx-text-fill: #EEEEEE;
+    -fx-prompt-text-fill: #888888;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #444444;
+}
+#SearchIcon {
+    -fx-opacity: 1;
+}
+
+/* Notification & Settings Icons */
+#notificationIcon, #settingsIcon {
+    -fx-opacity: 1;
+    -fx-fill: #333333; /* dark gray */
+}
+
+/* Sidebar */
+#sidebar {
+    -fx-background-color: #2A2A2A !important;
+    -fx-border-color: transparent;
+}
+#sidebar Button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #CCCCCC;
+}
+#sidebar Button:hover {
+    -fx-background-color: rgba(139, 0, 0, 0.2);
+    -fx-text-fill: #FFFFFF;
+}
+#sidebar Button:selected, #sidebar Button:focused {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: transparent;
+}
+#sidebar Label, #sidebar .label {
+    -fx-text-fill: #EEEEEE;
+}
+
+/* Override pressed state in sidebar */
+#sidebar Button:pressed {
+    -fx-background-color: transparent !important;
+    -fx-text-fill: #FFFFFF !important;
+}
+#sidebar Button:pressed .label, #sidebar Button:pressed .text {
+    -fx-text-fill: #FFFFFF !important;
+    -fx-fill: #FFFFFF !important;
+}
+
+/* Breadcrumb */
+#breadcrumbBox {
+    -fx-background-color: #1E1E1E;
+    -fx-border-color: #3A3A3A;
+}
+#breadcrumbBox Label {
+    -fx-text-fill: #CCCCCC;
+}
+#breadcrumbBox ImageView {
+    -fx-opacity: 0.7;
+}
+
+/* Summary Card & Chart Container */
+#summaryCard, #chartContainer {
+    -fx-background-color: #2A2A2A;
+    -fx-border-color: #3A3A3A;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+}
+#summaryCard Label, #chartContainer Label {
+    -fx-text-fill: #FFFFFF;
+}
+
+/* General Text Colors */
+.vbox > .label, .hbox > .label, .label, .section {
+    -fx-text-fill: #E0E0E0;
+}
+
+/* TableView and ScrollPane */
+.scroll-pane, .table-view {
+    -fx-background-color: #121212;
+    -fx-border-color: #2A2A2A;
+}
+.table-view .column-header-background {
+    -fx-background-color: #2A2A2A;
+}
+.table-view .column-header, .table-view .column-header .label {
+    -fx-background-color: #2A2A2A;
+    -fx-text-fill: #E0E0E0;
+    -fx-border-color: #3A3A3A;
+}
+.table-view .cell {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: #EEEEEE;
+}
+.table-view .cell:selected {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+}
+
+/* Form containers & sections */
+.another-section, .section, .add-patient-section {
+    -fx-background-color: #2A2A2A;
+}
+#formContainer, #mainVBox {
+    -fx-background-color: #2A2A2A !important;
+}
+.add-patient-section {
+    -fx-padding: 20;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-color: #3A3A3A;
+}
+
+/* Form Controls */
+TextField, ChoiceBox, DatePicker, Spinner, RadioButton, TextArea {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: #EEEEEE;
+    -fx-prompt-text-fill: #777777;
+    -fx-background-radius: 4;
+    -fx-border-radius: 4;
+    -fx-border-color: #3A3A3A;
+}
+TextField:focused, ChoiceBox:focused, DatePicker:focused, TextArea:focused {
+    -fx-border-color: #FFFFFF;
+}
+TextArea {
+    -fx-control-inner-background: #1E1E1E;
+    -fx-highlight-fill: #FFFFFF;
+    -fx-highlight-text-fill: #000000;
+}
+
+/* Buttons */
+Button {
+    -fx-background-color: derive(#2A2A2A, 5%);
+    -fx-text-fill: #E0E0E0;
+    -fx-background-radius: 6;
+    -fx-border-radius: 6;
+    -fx-border-color: #444444;
+}
+Button:hover {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+}
+Button:pressed {
+    -fx-background-color: derive(#FFFFFF, -10%);
+    -fx-text-fill: #000000 !important;
+}
+
+/* ListView styling */
+.list-view {
+    -fx-background-color: #121212;
+    -fx-border-color: #2A2A2A;
+}
+.list-cell {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: #EEEEEE;
+}
+.list-cell:selected {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+}
+
+/* Scrollable content zones and Scrollbars */
+#mainScrollPane, #treatmentsScrollPane {
+    -fx-background-color: black;
+}
+.scroll-pane .scroll-bar:vertical, .scroll-pane .scroll-bar:horizontal {
+    -fx-background-color: #121212;
+}
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: #2A2A2A;
+}
+
+.scroll-pane .scroll-bar .track {
+    -fx-background-color: #121212;
+}
+
+#treatmentContainer {
+    -fx-background-color: black;
+}
+#treatmentsContainer {
+    -fx-background-color: black;
+}
+
+/* Patients2 specific styling */
+
+/* Main scrollpane inner VBox to pure black */
+#mainScrollPane .vbox {
+    -fx-background-color: #000000;
+}
+
+/* Inner scrollpane (patient summary section) background */
+#mainScrollPane .scroll-pane > .viewport > .vbox {
+    -fx-background-color: #2A2A2A;
+}
+#mainScrollPane .scroll-pane > .viewport > .vbox > .vbox {
+    -fx-background-color: #2A2A2A;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: #121212; /* ou toute couleur opaque, pas transparent */
+}
+
+/* Patient detail labels (values) in white */
+#namelabel, #genderlabel, #agelabel, #diseaselabel, #bloodgrouplabel {
+    -fx-text-fill: #FFFFFF !important;
+}
+
+/* Treatments section container */
+#treatmentsVBox {
+    -fx-background-color: #2A2A2A;
+}
+.dark-treatments-inner {
+    -fx-background-color: #2A2A2A !important;
+}
+
+/* Treatment progress section */
+#progressVbox {
+    -fx-background-color: #2A2A2A;
+}
+
+/* Report section container */
+#reportVbox {
+    -fx-background-color: #2A2A2A;
+}
+
+/* Ensure section headers remain colored */
+.patients2-section-header .label {
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Treatment cards styling */
+.treatment-box {
+    -fx-background-color: #2A2A2A;
+    -fx-border-color: #888888;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+}
+
+/* Restore Treatment ListView cells styling */ 
+#treatmentListView .list-cell {
+    -fx-background-color: #1E1E1E;
+    -fx-text-fill: #EEEEEE;
+}
+#treatmentListView .list-cell:selected {
+    -fx-background-color: #8B0000;
+    -fx-text-fill: #FFFFFF;
+}
+.progressVbox {
+    -fx-background-color: #2A2A2A !important;
+}
+.reportVbox {
+    -fx-background-color: #2A2A2A !important;
+}
+
+/* Restore Appointment button styles */
+#appointmentsBtn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #CCCCCC;
+}
+#appointmentsBtn:hover {
+    -fx-background-color: rgba(139, 0, 0, 0.2);
+    -fx-text-fill: #FFFFFF;
+}
+#appointmentsBtn:selected, #appointmentsBtn:focused {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: transparent;
+}
+
+/* Calendar styling */
+.calendar-header-cell,
+.calendar-appointment-cell {
+    -fx-background-color: #2e2e2e;
+    -fx-border-color: #444;
+    -fx-border-width: 0 1px 1px 0;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-padding: 5px;
+}
+
+.calendar-header-cell-label,
+.calendar-header-cell-daynum {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.calendar-header-cell-label {
+    -fx-font-size: 12px;
+}
+.calendar-header-cell-daynum {
+    -fx-font-size: 14px;
+}
+
+.calendar-appointment-label,
+.calendar-appointment-label-none {
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+}
+
+
+
+/* Dark Mode CSS for Login.fxml */
+
+/* Root StackPane background overlay */
+
+
+/* Background Image: slightly darken */
+.backgroundImage {
+    -fx-opacity: 0.6;
+}
+
+/* Title styling */
+.titleLabel {
+    -fx-text-fill: #7BABE2;
+    -fx-font-size: 40px;
+}
+
+/* Login pane container */
+.loginPane {
+    -fx-background-color: #1E1E1E;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #3A3A3A;
+    -fx-border-width: 2;
+    -fx-padding: 20;
+}
+
+/* Rectangle behind form: hide it (optional) or match dark theme */
+.loginPane > Rectangle {
+    -fx-fill: #2A2A2A;
+}
+
+/* Labels inside form */
+.loginPane Label {
+    -fx-text-fill: #EEEEEE;
+}
+
+/* TextField & PasswordField */
+.loginPane TextField, .loginPane PasswordField {
+    -fx-background-color: #2B2B2B;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #777777;
+    -fx-background-radius: 4;
+    -fx-border-color: #444444;
+}
+.loginPane TextField:focused, .loginPane PasswordField:focused {
+    -fx-border-color: #7BABE2;
+}
+
+/* Buttons */
+.loginButton {
+    -fx-background-color: #7BABE2;
+    -fx-text-fill: #FFFFFF;
+}
+.loginButton:hover {
+    -fx-background-color: derive(#7BABE2, 20%);
+}
+
+/* Sign up link styling */
+.signUpButton {
+    -fx-text-fill: #7BABE2;
+}
+.signUpButton:hover {
+    -fx-underline: true;
+}
+
+/* Language button */
+.langButton {
+    -fx-background-color: #3A3A3A;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 20;
+}
+.langButton:hover {
+    -fx-background-color: #555555;
+}
+
+
+
+/* Dark Mode  SignUp.fxml */
+
+/* Background Image dimming */
+.background-image {
+    -fx-opacity: 0.6;
+}
+
+/* Container for the form */
+.form-pane {
+    -fx-background-color: #1E1E1E;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #3A3A3A;
+    -fx-border-width: 2;
+    -fx-padding: 20;
+}
+
+/* Rectangle background inside form pane */
+.form-pane > Rectangle {
+    -fx-fill: #2A2A2A;
+}
+
+/* Dashboard Summary Card */
+.summary-card {
+    -fx-background-color: #1E1E1E !important;
+    -fx-background-radius: 12px;
+    -fx-border-color: #3A3A3A !important;
+    -fx-border-radius: 12px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 2) !important;
+}
+
+/* Welcome and Stat Text */
+.welcome-text {
+    -fx-text-fill: #E0E0E0 !important;
+}
+
+.stat-text {
+    -fx-text-fill: #CCCCCC !important;
+}
+
+/* Chart Container */
+.chart-container {
+    -fx-background-color: #1E1E1E !important;
+    -fx-border-color: #3A3A3A !important;
+    -fx-border-radius: 12px !important;
+    -fx-background-radius: 12px !important;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0, 0, 2) !important;
+}
+
+.chart-title {
+    -fx-text-fill: #E0E0E0 !important;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+    -fx-background-color: #1E1E1E;
+    -fx-padding: 8px 15px;
+    -fx-border-color: #3A3A3A;
+    -fx-border-width: 0 0 1 0;
+}
+
+.breadcrumb .label {
+    -fx-text-fill: #E0E0E0 !important;
+}
+
+.breadcrumb .label:hover {
+    -fx-text-fill: #FFFFFF !important;
+    -fx-cursor: hand;
+}
+
+.breadcrumb .separator {
+    -fx-text-fill: #666666;
+    -fx-padding: 0 8px;
+}
+
+/* Title section */
+.form-header Text, .form-header Label {
+    -fx-fill: #E0E0E0;
+}
+.form-header Text {
+    -fx-font-size: 35px;
+}
+
+/* Form Labels */
+.form-label {
+    -fx-text-fill: #EEEEEE;
+    -fx-font-family: 'Bodoni MT Bold Italic';
+    -fx-font-size: 18px;
+}
+
+/* Text fields and password fields */
+.form-field {
+    -fx-background-color: #2B2B2B;
+    -fx-text-fill: #FFFFFF;
+    -fx-prompt-text-fill: #777777;
+    -fx-background-radius: 4;
+    -fx-border-color: #444444;
+}
+.form-field:focused {
+    -fx-border-color: #7BABE2;
+}
+
+/* Sign Up button */
+.primary-button {
+    -fx-background-color: #7BABE2;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-weight: bold;
+    -fx-border-color: white;
+    -fx-font-style: italic;
+}
+.primary-button:hover {
+    -fx-background-color: derive(#7BABE2, 20%);
+}
+
+/* Login link button */
+.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #7BABE2;
+    -fx-font-weight: bold;
+}
+.link-button:hover {
+    -fx-underline: true;
+}

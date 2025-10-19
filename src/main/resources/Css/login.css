@@ -1,0 +1,268 @@
+/* Root and background styles */
+.root {
+    -fx-background-color: #7babe2;
+}
+
+.background-image {
+    -fx-background-image: url("../images/hopital.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-background-repeat: no-repeat;
+    /* Standard properties */
+    background-image: url("../images/hopital.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #7babe2; /* Fallback background color */
+    -fx-background-color: #7babe2;
+}
+
+.background-pane {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Main container */
+.main-container {
+    -fx-padding: 20;
+    -fx-spacing: 30;
+    -fx-alignment: center;
+}
+
+/* Title styles */
+.title-label {
+    -fx-font-family: 'Segoe UI', 'Helvetica', Arial, sans-serif;
+    -fx-font-size: 42px;
+    -fx-font-weight: 700;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 0, 1, 2, 2);
+    -fx-padding: 0 20px 30px 20px;
+    -fx-text-alignment: center;
+    -fx-alignment: center;
+    -fx-background-color: transparent;
+    -fx-pref-width: 100%;
+    -fx-text-fill: linear-gradient(to right, #4a6baf, #7babe2);
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+    -fx-wrap-text: true;
+    -fx-max-width: 1000px;
+    -fx-min-width: 300px;
+    -fx-pref-height: 100px;
+    -fx-min-height: 80px;
+}
+
+/* Login form styles */
+.login-pane {
+    -fx-background-color: #EDE8D0;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+    -fx-min-width: 350;
+    -fx-max-width: 400;
+    -fx-padding: 30;
+    -fx-border-color: #d9d0b8;
+    -fx-border-width: 1;
+    -fx-border-radius: 10;
+}
+
+.login-form {
+    -fx-spacing: 15;
+    -fx-alignment: center;
+}
+
+.header-box {
+    -fx-spacing: 10;
+    -fx-alignment: center;
+    -fx-padding: 0 0 15 0;
+}
+
+.logo {
+    -fx-fit-width: 60;
+    -fx-fit-height: 60;
+}
+
+/* Form elements */
+.form-group {
+    -fx-spacing: 5;
+    -fx-pref-width: 250;
+}
+
+.form-label {
+    -fx-text-fill: #4a4a4a;
+    -fx-font-family: 'Bodoni MT';
+    -fx-font-size: 16px;
+    font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.form-field {
+    -fx-min-height: 40px;
+    -fx-pref-height: 40px;
+    -fx-min-width: 300px;
+    -fx-pref-width: 300px;
+    -fx-max-width: 300px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #7babe2;
+    -fx-border-width: 2px;
+    -fx-padding: 0 15px 0 10px;
+    -fx-font-size: 16px;
+}
+
+/* Password field container */
+.password-container {
+    -fx-min-width: 300px;
+    -fx-pref-width: 300px;
+    -fx-max-width: 300px;
+    -fx-spacing: 0;
+    -fx-padding: 0;
+    -fx-background-color: transparent;
+}
+
+/* Password field */
+.password-field, .password-field .text-field, 
+#passwordField, #passwordField .text-field {
+    -fx-min-height: 40px;
+    -fx-pref-height: 40px;
+    -fx-min-width: 300px;
+    -fx-pref-width: 300px;
+    -fx-max-width: 300px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #7babe2;
+    -fx-border-width: 2px;
+    -fx-padding: 0 45px 0 15px;
+    -fx-background-color: white;
+    -fx-font-size: 16px;
+}
+
+/* Ensure the password field fills the container */
+.password-field, #passwordField {
+    -fx-background-insets: 0;
+    -fx-background-color: transparent, white, transparent, white;
+}
+
+/* Style the text field that shows the visible password */
+#visiblePasswordField {
+    -fx-min-height: 40px;
+    -fx-pref-height: 40px;
+    -fx-min-width: 300px;
+    -fx-pref-width: 300px;
+    -fx-max-width: 300px;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #7babe2;
+    -fx-border-width: 2px;
+    -fx-padding: 0 45px 0 15px;
+    -fx-background-color: white;
+    -fx-font-size: 16px;
+}
+
+/* Password toggle button - positioned inside the field */
+.password-toggle-button {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+    -fx-border: none;
+    -fx-padding: 0 12px 0 0;
+    -fx-cursor: hand;
+    -fx-min-height: 40px;
+    -fx-pref-height: 40px;
+    -fx-min-width: 30px;
+    -fx-pref-width: 30px;
+    -fx-alignment: center-right;
+    -fx-translate-x: -30px; /* Pull the button into the field */
+}
+
+.password-toggle-button .image-view {
+    -fx-fit-width: 18px;
+    -fx-fit-height: 18px;
+    -fx-opacity: 0.8;
+    -fx-cursor: default;
+}
+
+/* Removed hover and active states for a cleaner look */
+
+/* Buttons */
+.login-button {
+    -fx-background-color: #7babe2;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-min-width: 200;
+    -fx-min-height: 40;
+    -fx-background-radius: 5;
+    -fx-border-color: white;
+    -fx-border-width: 1.5;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0, 0, 2);
+}
+
+.login-button:hover {
+    -fx-background-color: #6a9bd1;
+}
+
+/* Register section */
+.register-box {
+    -fx-spacing: 5;
+    -fx-alignment: center;
+    -fx-padding: 15 0 0 0;
+}
+
+.register-label {
+    -fx-text-fill: #4230b8;
+    -fx-font-size: 14px;
+}
+
+.signup-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2733d3;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+    -fx-cursor: hand;
+}
+
+.signup-button:hover {
+    -fx-text-fill: #1a2499;
+    -fx-underline: true;
+}
+
+/* Language button */
+.language-button {
+    -fx-background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
+    -fx-background-radius: 20;
+    -fx-text-fill: #4a4a4a;
+    -fx-padding: 8px 12px;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    font-size: 14px;
+    font-weight: bold;
+    -fx-effect: none;
+    -fx-border: none;
+    border: none;
+    -fx-min-width: 50px;
+    -fx-pref-width: 50px;
+    -fx-min-height: 30px;
+    -fx-pref-height: 30px;
+    -fx-alignment: center;
+    -fx-content-display: center;
+    -fx-text-alignment: center;
+}
+
+.language-button:hover {
+    -fx-background-color: rgba(0, 0, 0, 0.15);
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.lang-icon {
+    -fx-fit-width: 20;
+    -fx-fit-height: 17;
+}
+
+/* Welcome text */
+.welcome-text {
+    -fx-font-family: 'Bodoni MT';
+    -fx-font-size: 24px;
+    -fx-text-fill: #4a4a4a;
+    -fx-font-weight: bold;
+    -fx-wrap-text: true;
+    -fx-max-width: 250;
+    -fx-text-alignment: center;
+}

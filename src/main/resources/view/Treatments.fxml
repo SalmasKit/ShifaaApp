@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainLayout" prefHeight="600.0" prefWidth="800.0" stylesheets="@/Css/patients.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TreatmentsController">
+
+
+   <children>
+      <!-- Header -->
+    <HBox fx:id="headerBox" prefHeight="60.0" style="-fx-background-color: linear-gradient(to right, #e6f0ff 0%, #cce0ff 100%);" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                <image><Image url="@../images/treatment.png" /></image>
+                <HBox.margin><Insets left="15" top="10" /></HBox.margin>
+            </ImageView>
+            <Text fx:id="Shifaa" fill="#7babe2" text="Shifaa App" wrappingWidth="152.24609375">
+                <font><Font name="Bookman Old Style Bold" size="26" /></font>
+                <HBox.margin><Insets left="12" top="16" /></HBox.margin>
+            </Text>
+            <!-- spacer between title and search -->
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="searchField" prefHeight="28.0" prefWidth="331.0" promptText="Search" HBox.hgrow="ALWAYS">
+                <padding><Insets left="5" /></padding>
+                <HBox.margin><Insets right="5" top="16" /></HBox.margin>
+            </TextField>
+            <ImageView fx:id="searchButton" fitHeight="16" fitWidth="16" onMouseClicked="#searchTreatments" pickOnBounds="true" preserveRatio="true">
+                <image><Image url="@../images/magnifying-glass.png" /></image>
+                <HBox.margin><Insets left="-30.0" right="20.0" top="22.0" /></HBox.margin>
+            </ImageView>
+            <!-- spacer pushes icons to right -->
+            <Region HBox.hgrow="ALWAYS" />
+            <ImageView fx:id="notificationIcon" fitHeight="26" fitWidth="26" preserveRatio="true">
+                <image><Image url="@../images/bell.png" /></image>
+                <HBox.margin><Insets right="10" top="17" /></HBox.margin>
+            </ImageView>
+            <ImageView fx:id="settingsIcon" fitHeight="26" fitWidth="26" onMouseClicked="#handleSettingsClick" preserveRatio="true">
+                <image><Image url="@../images/more.png" /></image>
+                <HBox.margin><Insets right="15" top="17" /></HBox.margin>
+            </ImageView>
+        </children>
+    </HBox>
+
+    <!-- Sidebar -->
+    <VBox fx:id="sidebar" maxWidth="200" minWidth="200" prefWidth="200" spacing="10" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="60">
+        <children>
+            <StackPane prefHeight="65.0" prefWidth="94.0">
+            <HBox>
+               <StackPane.margin>
+                  <Insets top="5.0" />
+               </StackPane.margin>
+               <children>
+                      <ImageView fx:id="doctorImage" fitHeight="60" fitWidth="60" preserveRatio="true" />
+                     <Label fx:id="doctorNameLabel" alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="136.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            </StackPane>
+            <Button fx:id="dashboardBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToDashboardView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.Dashboard">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true"><image><Image url="@../images/home1.png" /></image></ImageView>
+                </graphic>
+            <font>
+               <Font size="13.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="50.0" />
+            </VBox.margin>
+            </Button>
+            <Button fx:id="patientsButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToPatientsView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.patients">
+                <graphic>
+                    <ImageView fitHeight="26" fitWidth="26" preserveRatio="true"><image><Image url="@../images/patient.png" /></image></ImageView>
+                </graphic>
+            <font>
+               <Font size="14.0" />
+            </font>
+            </Button>
+            <Button fx:id="treatmentsBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToTreatmentsView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.treatments">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true"><image><Image url="@../images/first-aid-kit.png" /></image></ImageView>
+                </graphic>
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+            <Button fx:id="appointmentsBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToAppointmentsView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.appointments">
+                <graphic>
+                    <ImageView fitHeight="26" fitWidth="26" preserveRatio="true"><image><Image url="@../images/calendar.png" /></image></ImageView>
+                </graphic>
+            <font>
+               <Font size="14.0" />
+            </font>
+            </Button>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button fx:id="loginBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToLoginView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.login">
+                <graphic>
+                    <ImageView fitHeight="26" fitWidth="26" preserveRatio="true">
+                        <image><Image url="@../images/login.png" /></image>
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Button>
+
+        </children>
+    </VBox>
+
+    <!-- Breadcrumb -->
+    <HBox fx:id="breadcrumbBox" prefHeight="40" spacing="5" styleClass="breadcrumb" AnchorPane.leftAnchor="200" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="60">
+        <children>
+            <ImageView fitHeight="26" fitWidth="26" preserveRatio="true"><image><Image url="@../images/home.png" /></image>
+            <HBox.margin>
+               <Insets left="10.0" top="5.0" />
+            </HBox.margin></ImageView>
+            <Label text="%Home.home">
+            <HBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font size="14.0" />
+            </font></Label><ImageView fitHeight="16" fitWidth="16" preserveRatio="true"><image><Image url="@../images/right-arrow.png" /></image>
+            <HBox.margin>
+               <Insets left="10.0" top="12.0" />
+            </HBox.margin></ImageView>
+            <Label fx:id="breadcrumbLabel" prefHeight="20.0" prefWidth="442.0">
+            <HBox.margin>
+               <Insets top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+        </children>
+    </HBox>
+      
+      <!--main part-->
+      <ScrollPane fx:id="mainScrollPane" fitToWidth="true" hbarPolicy="NEVER" layoutY="100.0" prefHeight="502.0" prefWidth="593.0" style="-fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0;" vbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+        <content>
+            <VBox fx:id="treatmentContainer" style="-fx-background-color: transparent;">
+               <children>
+                  <VBox fx:id="mainVBox" prefWidth="525.0" VBox.vgrow="ALWAYS">
+                     <children>
+                        <VBox style="-fx-background-color: #EDE8D0; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);">
+                           <children>
+                              <HBox fx:id="medecineshbox" prefHeight="55.0" style="-fx-background-color: #7BABE2; -fx-background-radius: 8 8 0 0;" HBox.hgrow="ALWAYS">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <children>
+                              <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/medicine.gif" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="medecineslabel" alignment="TOP_LEFT" prefHeight="34.0" prefWidth="305.0" text="%med.title" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="23.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="7.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <ScrollPane fx:id="treatmentsScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="317.0" style="-fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0;" vbarPolicy="NEVER">
+                           <content>
+                              <VBox alignment="CENTER" fillWidth="true">
+                                 <FlowPane fx:id="treatmentsContainer" alignment="CENTER" hgap="20" maxWidth="Infinity" style="-fx-background-color: transparent; -fx-alignment: center; -fx-padding: 10 0;" styleClass="flow-pane" vgap="20">
+                                    <VBox.margin><Insets bottom="20" /></VBox.margin>
+                                 </FlowPane>
+                              </VBox>
+                           </content>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="25.0" right="25.0" />
+                           </padding>
+                        </ScrollPane>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+                           </VBox.margin>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+                     </VBox.margin>
+                  </VBox>
+<VBox fx:id="formContainer" alignment="TOP_CENTER" spacing="20" style="-fx-background-color: #EDE8D0; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);" VBox.vgrow="ALWAYS">
+   <children>
+      <!-- Header -->
+      <HBox fx:id="addMedecinehbox" prefHeight="55.0" style="-fx-background-color: #7BABE2 !important; -fx-background-radius: 8 8 0 0;" HBox.hgrow="ALWAYS" VBox.vgrow="NEVER">
+         <children>
+            <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/prescription.gif" />
+               </image>
+            </ImageView>
+            <Label fx:id="addMedecineLabel" alignment="CENTER_LEFT" text="%addmeddetails" style="-fx-text-fill:black; ">
+               <font>
+                  <Font name="System Bold" size="23.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" top="7.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+
+      <!-- Form Layout -->
+      <HBox spacing="30" style="-fx-padding: 20 30;" VBox.vgrow="ALWAYS">
+         <!-- Left Column -->
+         <VBox spacing="20" HBox.hgrow="ALWAYS">
+            <!-- Medicine Name -->
+            <VBox spacing="5">
+               <Label style="-fx-font-weight: bold; -fx-font-size: 14;" text="%med.name">
+                  <padding>
+                     <Insets left="5" />
+                  </padding>
+               </Label>
+               <TextField fx:id="medecineNameField" promptText="%med.namef" />
+            </VBox>
+            
+            <!-- Prescription -->
+            <VBox spacing="5" VBox.vgrow="ALWAYS">
+               <Label style="-fx-font-weight: bold; -fx-font-size: 14;" text="%med.prescription">
+                  <padding>
+                     <Insets left="5" />
+                  </padding>
+               </Label>
+               <TextArea fx:id="prescriptionTextArea" promptText="%med.prescriptionf" VBox.vgrow="ALWAYS" />
+            </VBox>
+         </VBox>
+         
+         <!-- Right Column -->
+         <VBox spacing="20" HBox.hgrow="ALWAYS">
+            <!-- Duration -->
+            <VBox spacing="5">
+               <Label style="-fx-font-weight: bold; -fx-font-size: 14;" text="%med.duration">
+                  <padding>
+                     <Insets left="5" />
+                  </padding>
+               </Label>
+               <HBox alignment="CENTER_LEFT" spacing="10">
+                  <Spinner fx:id="durationSpinner" prefWidth="100" />
+                  <Label style="-fx-text-fill: #666; -fx-font-size: 14;" text="days" />
+               </HBox>
+            </VBox>
+            
+            <!-- Image Upload -->
+            <VBox spacing="5">
+               <Label style="-fx-font-weight: bold; -fx-font-size: 14;" text="%med.image">
+                  <padding>
+                     <Insets left="5" />
+                  </padding>
+               </Label>
+               <HBox alignment="CENTER_LEFT" spacing="10">
+                  <Button fx:id="uploadImageButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="180.0" style="-fx-background-color: black;" text="%med.update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/upload-big-arrow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </HBox>
+            </VBox>
+         </VBox>
+      </HBox>
+
+      <!-- Submit Button -->
+      <HBox alignment="CENTER_RIGHT" prefHeight="69.0" prefWidth="538.0">
+         <Button fx:id="addMedecineButton" mnemonicParsing="false" prefHeight="35.0" prefWidth="218.0" style="-fx-background-color: #7BABE2;" text="%med.button" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+                              <HBox.margin>
+                                 <Insets right="20.0" />
+                              </HBox.margin>
+         </Button>
+      </HBox>
+   </children>
+   <VBox.margin>
+      <Insets bottom="30.0" left="30.0" right="30.0" />
+   </VBox.margin>
+</VBox>
+
+               </children>
+            </VBox>
+        </content>
+      </ScrollPane>
+
+   </children>
+</AnchorPane>

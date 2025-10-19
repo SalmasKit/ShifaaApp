@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="mainLayout" prefHeight="600.0" prefWidth="800.0" stylesheets="@/Css/patients.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PatientsController">
+
+   <children>
+       <!-- Header -->
+    <HBox fx:id="headerBox" prefHeight="60.0" style="-fx-background-color: linear-gradient(to right, #e6f0ff 0%, #cce0ff 100%);" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <children>
+            <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                <image><Image url="@../images/treatment.png" /></image>
+                <HBox.margin><Insets left="15" top="10" /></HBox.margin>
+            </ImageView>
+            <Text fx:id="Shifaa" fill="#7babe2" text="%app.name">
+                <font><Font name="Bookman Old Style Bold" size="26" /></font>
+                <HBox.margin><Insets left="12" top="16" /></HBox.margin>
+            </Text>
+            <!-- spacer between title and search -->
+            <Region HBox.hgrow="ALWAYS" />
+            <TextField fx:id="searchField" prefHeight="28.0" prefWidth="331.0" promptText="Search" HBox.hgrow="ALWAYS">
+                <padding><Insets left="5" /></padding>
+                <HBox.margin><Insets right="5" top="16" /></HBox.margin>
+            </TextField>
+            <ImageView fx:id="searchIcon" fitHeight="16" fitWidth="16" onMouseClicked="#onSearchClicked" pickOnBounds="true" preserveRatio="true">
+                <image><Image url="@../images/magnifying-glass.png" /></image>
+                <HBox.margin><Insets left="-30.0" right="20.0" top="22.0" /></HBox.margin>
+            </ImageView>
+            <!-- spacer pushes icons to right -->
+            <Region HBox.hgrow="ALWAYS" />
+            <ImageView fx:id="notificationIcon" fitHeight="26" fitWidth="26" preserveRatio="true">
+                <image><Image url="@../images/bell.png" /></image>
+                <HBox.margin><Insets right="10" top="17" /></HBox.margin>
+            </ImageView>
+            <ImageView fx:id="settingsIcon" fitHeight="26" fitWidth="26" onMouseClicked="#handleSettingsClick" preserveRatio="true">
+                <image><Image url="@../images/more.png" /></image>
+                <HBox.margin><Insets right="15" top="17" /></HBox.margin>
+            </ImageView>
+        </children>
+    </HBox>
+
+    <!-- Sidebar -->
+    <VBox fx:id="sidebar" maxWidth="200" minWidth="200" prefWidth="200" spacing="10" AnchorPane.bottomAnchor="0" AnchorPane.leftAnchor="0" AnchorPane.topAnchor="60">
+        <children>
+            <StackPane prefHeight="65.0" prefWidth="94.0">
+            <HBox>
+               <StackPane.margin>
+                  <Insets top="5.0" />
+               </StackPane.margin>
+               <children>
+                      <ImageView fx:id="doctorImage" fitHeight="60" fitWidth="60" preserveRatio="true" />
+                     <Label fx:id="doctorNameLabel" alignment="BOTTOM_LEFT" prefHeight="20.0" prefWidth="136.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" top="20.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            </StackPane>
+            <Button fx:id="dashboardBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToDashboardView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.Dashboard">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true"><image><Image url="@../images/home1.png" /></image></ImageView>
+                </graphic>
+            <font>
+               <Font size="13.0" />
+            </font>
+            <VBox.margin>
+               <Insets top="50.0" />
+            </VBox.margin>
+            </Button>
+            <Button fx:id="patientsButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToPatientsView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.patients">
+                <graphic>
+                    <ImageView fitHeight="26" fitWidth="26" preserveRatio="true"><image><Image url="@../images/patient.png" /></image></ImageView>
+                </graphic>
+            <font>
+               <Font name="System Bold" size="14.0" />
+            </font>
+            </Button>
+            <Button fx:id="treatmentsBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToTreatmentsView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.treatments">
+                <graphic>
+                    <ImageView fitHeight="24.0" fitWidth="24.0" preserveRatio="true"><image><Image url="@../images/first-aid-kit.png" /></image></ImageView>
+                </graphic>
+            <font>
+               <Font size="14.0" />
+            </font>
+            </Button>
+            <Button fx:id="appointmentsBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToAppointmentsView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.appointments">
+                <graphic>
+                    <ImageView fitHeight="26" fitWidth="26" preserveRatio="true"><image><Image url="@../images/calendar.png" /></image></ImageView>
+                </graphic>
+            <font>
+               <Font size="14.0" />
+            </font>
+            </Button>
+            <Region VBox.vgrow="ALWAYS" />
+            <Button fx:id="loginBtn" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToLoginView" prefHeight="38" prefWidth="180" style="-fx-background-color: transparent;" text="%dashboard.login">
+                <graphic>
+                    <ImageView fitHeight="26" fitWidth="26" preserveRatio="true">
+                        <image><Image url="@../images/login.png" /></image>
+                    </ImageView>
+                </graphic>
+                <font>
+                    <Font size="13.0" />
+                </font>
+            </Button>
+
+        </children>
+    </VBox>
+
+    <!-- Breadcrumb -->
+    <HBox fx:id="breadcrumbBox" styleClass="breadcrumb" prefHeight="40" spacing="5" AnchorPane.leftAnchor="200" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="60">
+        <children>
+            <ImageView fitHeight="26" fitWidth="26" preserveRatio="true"><image><Image url="@../images/home.png" /></image>
+            <HBox.margin>
+               <Insets left="10.0" top="5.0" />
+            </HBox.margin></ImageView>
+            <Label text="%Home.home">
+            <HBox.margin>
+               <Insets left="10.0" top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font size="14.0" />
+            </font></Label><ImageView fitHeight="16" fitWidth="16" preserveRatio="true"><image><Image url="@../images/right-arrow.png" /></image>
+            <HBox.margin>
+               <Insets left="10.0" top="12.0" />
+            </HBox.margin></ImageView>
+            <Label fx:id="breadcrumbLabel" prefHeight="20.0" prefWidth="442.0">
+            <HBox.margin>
+               <Insets top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font size="14.0" />
+            </font></Label>
+        </children>
+    </HBox>
+
+      <ScrollPane fx:id="mainScrollPane" fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0; -fx-background-insets: 0; -fx-hbar-policy: never; -fx-vbar-policy: never;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="100.0">
+         <content>
+            <VBox style="-fx-background-color: transparent;">
+               <children>
+                  <!-- Liste des patients -->
+                  <VBox prefHeight="297.0" prefWidth="565.0" style="-fx-background-color: #DCDCDC;">
+                     <children>
+                        <!-- En‑tête -->
+                        <HBox prefHeight="48.0" prefWidth="542.0" style="-fx-background-color: #7BABE2;">
+                           <children>
+                              <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/patient.gif" />
+                                 </image>
+                              </ImageView>
+
+                              <Label fx:id="patientsListLabel" alignment="TOP_LEFT" prefHeight="32.0" prefWidth="306.0" styleClass="section" text="%patients.list" textFill="BLACK">
+
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </HBox.margin>
+                              </Label>
+                           </children>
+                        </HBox>
+
+                        <!-- Ici, on laisse le TableView grandir librement -->
+                       <VBox prefWidth="542.0" styleClass="another-section" VBox.vgrow="ALWAYS">
+                            <children>
+                               <TableView fx:id="patientsTable" prefWidth="542.0" style="-fx-font-size: 11pt;" VBox.vgrow="ALWAYS" styleClass="table-view table-view-black-text">
+                                  <columns>
+                                     <TableColumn fx:id="patientNameColumn" prefWidth="150.0" text="%patients.column.name" />
+                                     <TableColumn fx:id="genderColumn" prefWidth="75.0" text="%patients.column.gender" />
+                                     <TableColumn fx:id="ageColumn" prefWidth="75.0" text="%patients.column.age" />
+                                     <TableColumn fx:id="bloodGroupColumn" prefWidth="150.0" text="%patients.column.bloodGroup" />
+                                     <TableColumn fx:id="diseaseColumn" prefWidth="150.0" text="%patients.column.disease" />
+                                     <TableColumn fx:id="phoneColumn" prefWidth="150.0" text="%patients.column.phone" />
+                                     <TableColumn fx:id="emailColumn" prefWidth="170.0" text="%patients.column.email" />
+                                     <TableColumn fx:id="addressColumn" prefWidth="170.0" text="%patients.column.address" />
+                                     <TableColumn fx:id="appointmentDateColumn" prefWidth="150.0" text="%appointments.column.date" />
+                                     <TableColumn fx:id="appointmentTimeColumn" prefWidth="150.0" text="%appointments.column.time" />
+                                     <TableColumn fx:id="appointmentTypeColumn" prefWidth="150.0" text="%appointments.column.type" />
+                                     <TableColumn fx:id="actionsColumn" prefWidth="200.0" text="%patients.column.actions" />
+                                  </columns>
+                               </TableView>
+                            </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                         </VBox>
+
+                     </children>
+                     <VBox.margin>
+                        <Insets left="20.0" right="20.0" top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+
+<!-- Formulaire d'ajout amélioré: deux champs par ligne dans un GridPane -->
+<VBox fx:id="formContainer" prefHeight="593.0" prefWidth="538.0" spacing="10.0" style="-fx-background-color: #EDE8D0; -fx-padding: 20;" styleClass="add-patient-section">
+    <!-- Titre section -->
+    <HBox alignment="CENTER_LEFT" prefHeight="55.0" prefWidth="482.0" style="-fx-background-color: #7BABE2 !important; -fx-padding: 0 0 0 20;">
+                        <ImageView fitHeight="55.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <HBox.margin>
+                              <Insets left="-20.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@../images/addpatient.gif" />
+                           </image>
+                        </ImageView>
+        <Label styleClass="section" text="%patients.form.title" textFill="BLACK">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+        </Label>
+                        <VBox.margin>
+                           <Insets left="-20.0" right="-20.0" top="-20.0" />
+                        </VBox.margin>
+    </HBox>
+
+    <!-- Formulaire en grille 2 colonnes -->
+    <GridPane hgap="20" vgap="15">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="50" />
+            <ColumnConstraints percentWidth="50" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+            <RowConstraints vgrow="NEVER" />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+                           <RowConstraints />
+        </rowConstraints>
+
+        <!-- Nom et Prénom -->
+        <Label text="%patients.firstName" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <TextField fx:id="firstNameField" prefHeight="35.0" prefWidth="214.0" promptText="%patients.enterFirstName" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="50.0" />
+                           </GridPane.margin></TextField>
+
+        <Label text="%patients.lastName" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <TextField fx:id="lastNameField" prefHeight="35.0" promptText="%patients.enterLastName" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets right="50.0" />
+                           </GridPane.margin></TextField>
+
+        <!-- Age et Sexe -->
+        <Label text="%patients.age" GridPane.columnIndex="0" GridPane.rowIndex="2">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <Spinner fx:id="ageSpinner" prefHeight="35.0" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+        <Label text="%patients.gender" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <HBox alignment="CENTER_LEFT" prefHeight="35.0" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <RadioButton fx:id="maleRadio" text="%patients.male" />
+            <RadioButton fx:id="femaleRadio" text="%patients.female" />
+        </HBox>
+
+        <!-- Téléphone et Email -->
+        <Label text="%patients.phone" GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <TextField fx:id="phoneField" prefHeight="35.0" promptText="%patients.enterPhone" style="-fx-text-fill: black;" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets right="50.0" />
+                           </GridPane.margin></TextField>
+
+        <Label text="%patients.email" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <TextField fx:id="emailField" prefHeight="35.0" promptText="%patients.enterEmail" style="-fx-text-fill: black;" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <GridPane.margin>
+                              <Insets right="50.0" />
+                           </GridPane.margin></TextField>
+
+        <!-- Adresse et Maladie -->
+        <Label text="%patients.address" GridPane.columnIndex="0" GridPane.rowIndex="6">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <TextField fx:id="addressField" prefHeight="35.0" promptText="%patients.enterAddress" style="-fx-text-fill: black;" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets right="50.0" />
+                           </GridPane.margin>
+        </TextField>
+
+        <Label text="%patients.disease" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <TextField fx:id="diseaseField" prefHeight="35.0" promptText="%patients.enterDisease" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <GridPane.margin>
+                              <Insets right="50.0" />
+                           </GridPane.margin></TextField>
+
+        <!-- Date et Heure de RDV -->
+        <Label text="%patients.appointmentDate" GridPane.columnIndex="0" GridPane.rowIndex="8">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <DatePicker fx:id="appointmentDatePicker" prefHeight="35.0" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+
+        <Label text="%patients.appointmentTime" GridPane.columnIndex="1" GridPane.rowIndex="8">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <TextField fx:id="appointmentTimeField" prefHeight="35.0" promptText="HH:mm" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                           <GridPane.margin>
+                              <Insets right="50.0" />
+                           </GridPane.margin></TextField>
+
+        <!-- Type de RDV et Groupe sanguin -->
+        <Label text="%patients.appointmentType" GridPane.columnIndex="0" GridPane.rowIndex="10">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <ChoiceBox fx:id="appointmentTypeChoiceBox" prefHeight="35.0" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+
+        <Label text="%patients.bloodGroup" GridPane.columnIndex="1" GridPane.rowIndex="10">
+            <font><Font name="System Bold" size="15.0" /></font>
+        </Label>
+        <ChoiceBox fx:id="bloodGroupChoiceBox" prefHeight="35.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+    </GridPane>
+
+    <!-- Bouton d'envoi centré -->
+    <HBox alignment="CENTER_RIGHT" prefHeight="145.0" prefWidth="498.0">
+        <VBox spacing="20">
+            <Button fx:id="addPatientButton" onAction="#handleAddPatient" prefHeight="35.0" prefWidth="160.0" text="%patients.addPatient" />
+            <padding>
+                <Insets bottom="0" left="0" right="0" top="20" />
+            </padding>
+        </VBox>
+    </HBox>
+                     <VBox.margin>
+                        <Insets left="30.0" right="30.0" top="50.0" />
+                     </VBox.margin>
+</VBox>
+
+            </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,141 @@
+.root {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+}
+
+.treatment-box {
+    -fx-background-color: #f0f0f0;
+    -fx-border-color: #ccc;
+    -fx-border-width: 2px;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+}
+
+/* boutons */
+.treatment-buttons .button {
+  -fx-background-color: transparent !important;
+  -fx-border-color: transparent !important;
+  -fx-padding: 5px;    /* conserve un peu d’espace autour de l’icône */
+}
+
+
+/* Add Patient button in light theme */
+#addPatientButton {
+    -fx-background-color: #7BABE2 !important;
+    -fx-text-fill: white !important;
+    -fx-font-weight: bold !important;
+    -fx-background-radius: 4 !important;
+}
+
+#addPatientButton:hover {
+    -fx-background-color: #6a9bd1 !important;
+}
+
+/* style-light.css */
+.calendar-header-cell {
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.calendar-header-cell-label {
+    -fx-font-family: Arial;
+    -fx-font-size: 13px;
+    -fx-text-fill: black;
+}
+
+.calendar-header-cell-daynum {
+    -fx-font-family: Arial;
+    -fx-font-size: 20px;
+    -fx-text-fill: black;
+}
+
+.calendar-appointment-cell {
+    -fx-background-color: #e9f5ff;
+    -fx-border-color: #90caf9;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.calendar-appointment-label {
+    -fx-font-family: Arial;
+    -fx-font-size: 12px;
+    -fx-text-fill: black;
+}
+
+.calendar-appointment-label-none {
+    -fx-font-family: Arial;
+    -fx-font-size: 12px;
+    -fx-text-fill: gray;
+}
+.treatment-buttons {
+  -fx-background-color: #ADD8E6;    /* lightblue */
+}
+
+/* Breadcrumb */
+#breadcrumbBox {
+    -fx-background-color: #EDE8D0;  /* Light beige background for breadcrumb */
+    -fx-border-color: #D0C9B0;      /* Slightly darker border for contrast */
+}
+#breadcrumbBox Label {
+    -fx-text-fill: #333333;         /* Dark text for better readability */
+}
+#breadcrumbBox ImageView {
+    -fx-opacity: 0.8;               /* Slightly transparent arrow icons */
+}
+
+/* Barre de titre */
+#headerBox {
+  -fx-background-color: #e2f6ff;
+}
+
+/* Barre latérale */
+/* Sidebar */
+#sidebar {
+  -fx-background-color: linear-gradient(to right, #e6f0ff 0%, #cce0ff 100%);
+  -fx-padding: 10;
+  -fx-border-color: #b3c6ff;
+  -fx-border-width: 0 1px 0 0;
+  -fx-border-style: solid;
+}
+
+/* Search Field */
+#searchField {
+  -fx-border-radius: 20;
+}
+
+/* Summary Card */
+.summary-card {
+  -fx-background-color: linear-gradient(to right, #e6f0ff 0%, #cce0ff 100%);
+  -fx-border-color: #b3c6ff;
+  -fx-border-radius: 12;
+  -fx-background-radius: 12;
+  -fx-effect: dropshadow(gaussian, rgba(30, 100, 200, 0.1), 10, 0, 0, 2);
+}
+
+/* Chart Container */
+.chart-container {
+  -fx-background-color: #ffffff;
+  -fx-border-color: #e9ecef;
+  -fx-border-radius: 12;
+  -fx-background-radius: 12;
+  -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);
+}
+
+/* Header Box */
+#headerBox {
+  -fx-background-color: linear-gradient(to right, #e6f0ff 0%, #cce0ff 100%);
+  -fx-border-color: transparent;
+  -fx-border-width: 0 0 1 0;
+  -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 2);
+}
+
+/* Titres de section */
+.section {
+  -fx-font-size: 22px;
+  -fx-font-weight: bold;
+  -fx-text-fill: white;
+}
+

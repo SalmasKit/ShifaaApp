@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:controller="controller.LogInController" 
+           xmlns="http://javafx.com/javafx/23.0.1" 
+           xmlns:fx="http://javafx.com/fxml/1"
+           styleClass="root"
+           stylesheets="@../Css/login.css">
+
+      <!-- Background Image -->
+    <StackPane styleClass="background-image">
+        <children>
+            <Pane style="-fx-background-color: rgba(255, 255, 255, 0.1);" />
+        </children>
+    </StackPane>
+
+    <!-- Main Content Container -->
+    <VBox styleClass="main-container">
+        <!-- App Title -->
+        <Label fx:id="titleLabel" styleClass="title-label" text="%app.name" />
+
+        <!-- Login Form Box -->
+        <VBox styleClass="login-pane">
+            <VBox styleClass="login-form">
+                <HBox styleClass="header-box">
+                    <ImageView styleClass="logo">
+                        <image>
+                            <Image url="@../images/doctor-consultation-removebg-preview%20(1).png" />
+                        </image>
+                    </ImageView>
+                    <Label fx:id="welcomeText" styleClass="welcome-text" text="%login.titre" />
+                </HBox>
+
+                <VBox styleClass="form-group">
+                    <Label fx:id="emailLabel" styleClass="form-label" text="%login.email" />
+                    <TextField fx:id="emailField" styleClass="form-field" promptText="%login.e2" />
+                </VBox>
+
+                <VBox styleClass="form-group">
+                    <Label fx:id="passwordLabel" styleClass="form-label" text="%login.password" />
+                    <HBox styleClass="password-container">
+                        <PasswordField fx:id="passwordField" styleClass="password-field" promptText="%login.e1" />
+                        <Button fx:id="togglePasswordButton" 
+                                onAction="#togglePasswordVisibility"
+                                style="-fx-background-color: transparent; -fx-cursor: hand;"
+                                styleClass="password-toggle-button">
+                            <graphic>
+                                <ImageView fitWidth="18" fitHeight="18" preserveRatio="true">
+                                    <Image url="@../images/view.png" />
+                                </ImageView>
+                            </graphic>
+                        </Button>
+                    </HBox>
+                </VBox>
+
+                <Button fx:id="loginButton" onAction="#handleLogin" 
+                        styleClass="login-button" 
+                        text="%login.button" />
+
+                <HBox styleClass="register-box">
+                    <Label fx:id="notRegisteredLabel" styleClass="register-label" text="%login.register" />
+                    <Button fx:id="signUpButton" onAction="#handleSignUp" 
+                            styleClass="signup-button" 
+                            text="%login.signup" />
+                </HBox>
+
+                <!-- Language Switch -->
+                <HBox alignment="BOTTOM_RIGHT" style="-fx-padding: 10 0 0 0;">
+                    <Button fx:id="langButton" onAction="#handleLanguageSwitch" 
+                            styleClass="language-button">
+                        <text>Change language / Changer de langue</text>
+                    </Button>
+                </HBox>
+            </VBox>
+        </VBox>
+    </VBox>
+</StackPane>
