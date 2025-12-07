@@ -79,31 +79,60 @@ mvn clean javafx:run@debug
 ## Project Structure
 
 ```
-src/main/java/
-├── controller/
-│   ├── BaseController.java
-│   ├── LogInController.java
-│   ├── MainController.java
-│   ├── PatientsController.java
-│   ├── Patients2Controller.java
-│   ├── SignUpController.java
-│   ├── AppointmentsController.java
-│   └── TreatmentsController.java
-├── model/
-│   ├── Doctor.java
-│   ├── DoctorDAO.java
-│   ├── LogIn.java
-│   ├── LogInDAO.java
-│   ├── Patient.java
-│   ├── PatientDAO.java
-│   ├── Patients2.java
-│   ├── Patients2DAO.java
-│   ├── SignUp.java
-│   ├── SignUpDAO.java
-│   ├── Treatment.java
-│   └── TreatmentDAO.java
-├── utils/
-│   ├── Database.java
-│   └── Session.java
-└── main/
-    └── Main.java
+ShifaaProject/
+│
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   ├── controller/               # Controller classes
+│   │   │   │   ├── AppointmentsController.java
+│   │   │   │   ├── BaseController.java
+│   │   │   │   ├── LogInController.java
+│   │   │   │   ├── MainController.java
+│   │   │   │   ├── Patients2Controller.java
+│   │   │   │   ├── PatientsController.java
+│   │   │   │   ├── SignUpController.java
+│   │   │   │   └── TreatmentsController.java
+│   │   │   │
+│   │   │   ├── model/                   # Model classes
+│   │   │   │   ├── Doctor.java
+│   │   │   │   ├── DoctorDAO.java
+│   │   │   │   ├── LogIn.java
+│   │   │   │   ├── LogInDAO.java
+│   │   │   │   ├── Patient.java
+│   │   │   │   ├── PatientDAO.java
+│   │   │   │   ├── Patients2.java
+│   │   │   │   ├── Patients2DAO.java
+│   │   │   │   ├── SignUp.java
+│   │   │   │   ├── SignUpDAO.java
+│   │   │   │   ├── Treatment.java
+│   │   │   │   └── TreatmentDAO.java
+│   │   │   │
+│   │   │   ├── utils/                   # Utility classes
+│   │   │   │   ├── Database.java
+│   │   │   │   └── Session.java
+│   │   │   │
+│   │   │   └── main/
+│   │   │       └── Main.java            # Application entry point
+│   │   │
+│   │   └── resources/
+│   │       ├── Css/                     # CSS files
+│   │       │
+│   │       ├── images/                  # Application images
+│   │       │
+│   │       ├── lang/                    # Internationalization
+│   │       │   └── messages.properties
+│   │       │
+│   │       └── view/                    # FXML views
+│   │           ├── Appointments.fxml
+│   │           ├── Dashboard.fxml
+│   │           ├── Login.fxml
+│   │           ├── Patients.fxml
+│   │           ├── Patients2.fxml
+│   │           ├── SignUp.fxml
+│   │           └── Treatments.fxml
+│   │
+│   └── test/                            # Test directory
+│       └── java/
+│
+└── pom.xml                              # Maven configuration
